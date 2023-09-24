@@ -1,0 +1,17 @@
+{
+  "Postgres": {
+    "ConnectionString": "postgres://postgres:postgrespw@localhost:32768/monitoring?sslmode=disable"
+  },
+  "Kafka" : {
+    "KafkaConfig": [
+      { "bootstrap.servers" : "localhost"},
+      { "ssl.endpoint.identification.algorithm" : "https"},
+      { "enable.ssl.certificate.verification" :   "false"},
+      { "security.protocol" : "sasl_ssl"},
+      { "sasl.mechanism" : "SCRAM-SHA-512"},
+      { "sasl.username" : "user"},
+      {"sasl.password" : "password"}
+    ],
+    "AdditionalSettings" : ""
+  }
+}
