@@ -14,7 +14,7 @@ type OutBoxRepository struct {
 
 func (repository OutBoxRepository) GetOutBoxes() []models.OutBox {
 
-	query := "SELECT * FROM outbox WHERE Status = $1 AND DT <= $2"
+	query := "SELECT * FROM outbox WHERE Status = $1 AND DT <= $2 ORDER BY DT LIMIT 50"
 	rows, err := repository.Context.Query(query, 0, time.Now())
 	if err != nil {
 		log.Fatal("Error reading records", err)

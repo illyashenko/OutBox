@@ -53,7 +53,7 @@ func (kafkaMq KafkaMq) SendMassages(messages []models.Message) {
 		} else {
 			message.Result = true
 		}
-		kafkaMq.Producer.Flush(10000)
+
 		close(delChan)
 	}
 }
